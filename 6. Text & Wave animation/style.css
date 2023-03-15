@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  height: 100%;
+}
+.text-animation {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-wrapper {
+  position: relative;
+}
+
+.text-wrapper h2 {
+  z-index: 4;
+  color: #fff;
+  font-size: 15vw;
+  white-space: nowrap;
+  position: absolute;
+  transform: translate(-50%, -62%);
+}
+
+.text-wrapper h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+}
+
+.text-wrapper h2:nth-child(2) {
+  color: #fff;
+  animation: wave 4s ease-in-out infinite;
+}
+
+@keyframes wave {
+  /* start point */
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 46%,
+      17% 45%,
+      34% 50%,
+      56% 61%,
+      69% 62%,
+      86% 60%,
+      100% 51%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  /* Mid point */
+  50% {
+    clip-path: polygon(
+      0% 59%,
+      16% 64%,
+      33% 65%,
+      52% 61%,
+      70% 52%,
+      85% 47%,
+      100% 48%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+/* ********************* Image Waves ************************ */
+.waveDiv {
+  position: absolute;
+  overflow: hidden;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.wave-content-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  bottom: -1px;
+  background-image: linear-gradient(to top, #00607a 30%, #002029 90%);
+}
+.first-wave {
+  z-index: 3;
+  opacity: 0.5;
+}
+.second-wave {
+  z-index: 2;
+  opacity: 0.75;
+}
+.third-wave {
+  z-index: 1;
+}
+.wave-image {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.first-image {
+  background-size: 50% 100px;
+}
+.animation-wave .first-image {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.second-image {
+  background-size: 50% 120px;
+}
+.animation-wave .second-image {
+  animation: waves 10s linear infinite;
+}
+.third-image {
+  background-size: 50% 140px;
+}
+.animation-wave .third-image {
+  animation: waves 15s linear infinite;
+}
+
+@keyframes waves {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
