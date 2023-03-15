@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT ANIMATION</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <svg width="0" height="0">
+        <filter id='grainy' x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency='.5'/>
+            <feColorMatrix type='saturate' values='0'/>
+            <feBlend in='SourceGraphic' mode='multiply'/>
+        </filter>
+        <filter id="distfx-0">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="1" seed="0"/>
+            <feDisplacementMap in="SourceGraphic" scale="1"/>
+        </filter>
+        <filter id="distfx-1">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="2" seed="1"/>
+            <feDisplacementMap in="SourceGraphic" scale="2"/>
+        </filter>
+        <filter id="distfx-2">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="3" seed="2"/>
+            <feDisplacementMap in="SourceGraphic" scale="3"/>
+        </filter>
+        <filter id="distfx-3">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="4" seed="3"/>
+            <feDisplacementMap in="SourceGraphic" scale="4"/>
+        </filter>
+        <filter id="distfx-4">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="3" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="3"/>
+        </filter>
+        <filter id="distfx-5">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="2" seed="5"/>
+            <feDisplacementMap in="SourceGraphic" scale="2"/>
+        </filter>
+    </svg>
+    
+    <div id="root">
+        <h1 class="distfx">
+            Hii, i'm SNEHA
+        </h1>
+    </div>
+    
+</body>
+</html>
